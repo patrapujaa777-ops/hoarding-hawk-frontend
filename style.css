@@ -1,0 +1,304 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+}
+
+.screen.active {
+  display: block;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 86vh;
+}
+
+.center1 button {
+  background-color: #10A984;
+}
+
+.center1 button:hover {
+  background-color: #048666;
+}
+
+.center1 h1 {
+  font-size: 47px;
+  position: relative;
+  z-index: 18px;
+}
+
+.center1 p {
+  font-size: 20px;
+  position: relative;
+  z-index: 17px;
+}
+
+.center2 input {
+  width: 37vw;
+  padding: 12px;
+  border-radius: 6px;
+}
+.center2 .bt1{
+  width: 72vw;
+}
+.center2 button {
+  padding: 12px;
+  width: 41vw;
+  background-color: #10A984;
+}
+
+.center2 button:hover {
+  background-color: #048666;
+}
+
+.center2 h1 {
+  font-size: 48px;
+  margin-bottom: 34px;
+}
+
+.center2 input {
+  padding: 14px;
+  width: 64vw;
+  margin-bottom: 25px;
+}
+
+.center2 button {
+  padding: 12px;
+  width: 66vw;
+  font-size: 20px;
+}
+
+.center2 .bt1 {
+  margin-bottom: 48px;
+}
+
+.center2 .bt2 {
+  margin-top: 70px;
+}
+
+.center2 p {
+  font-size: 20px;
+  margin-top: 18px;
+}
+
+.logo {
+  width: 193px;
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  margin: 10px 0;
+}
+
+p {
+  margin: 5px 0 20px;
+}
+
+button {
+  margin: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  /* background: #0077ff; */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* button:hover {
+  background: #005fd1;
+} */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.main-action button {
+  background-color: #e6faf5;
+  color: black;
+
+}
+
+.dark-mode {
+  background: #222;
+  color: white;
+}
+
+.dark-mode button {
+  background: #444;
+}
+
+.dark-mode button:hover {
+  background: #666;
+}
+
+
+.menu-bar span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: black;
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+*/ .menu-bar {
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-bar span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: black;
+  margin: 4px 0;
+  /* a little tighter */
+  transition: 0.3s;
+}
+
+
+.main-action .btns {
+  display: flex;
+  align-items: center;
+  /* vertically align icon + text */
+  justify-content: flex-start;
+  gap: 10px;
+  /* space between icon and text */
+  padding: 14px 17px;
+  width: 90%;
+  margin: 10px auto;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-action .btns svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #10A984;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 16px;
+  z-index: 1000;
+}
+
+.screen-3 {
+  padding-top: 70px;
+}
+
+.screen-4 .btns {
+  background-color: #27c09a;
+  color: white;
+  font-size: 18px;
+}
+
+.screen-5 button {
+  background-color: #27c09a;
+  color: white;
+  font-size: 18px;
+}
+
+.screen-6 button {
+  background-color: #27c09a;
+  color: white;
+  font-size: 18px;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.back-btn svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.sidebar .buttons {
+  color: black;
+  background-color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar .buttons {
+  display: flex;
+  align-items: center;
+  /* vertically align icon + text */
+  justify-content: flex-start;
+  gap: 10px;
+  /* space between icon and text */
+  padding: 10px 15px;
+  width: 90%;
+  margin: 10px auto;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
+.sidebar .buttons svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  /* prevents squishing */
+}
+
+
+.sidebar.active {
+  left: 0;
+}
