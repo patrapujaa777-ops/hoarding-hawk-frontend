@@ -9,7 +9,7 @@ function showScreen(screenId) {
 // ----------------- Image/Video Upload -----------------
 let imgCount = 0, vidCount = 0;
 
-// Helper function to send files to backend
+// Helper: upload file to backend
 function uploadFileToBackend(file, geotag = "Not provided") {
   let formData = new FormData();
   formData.append("file", file);
@@ -25,51 +25,67 @@ function uploadFileToBackend(file, geotag = "Not provided") {
   .catch(err => console.error("❌ File upload error:", err));
 }
 
-// Capture image from camera/gallery
+
+
+// Capture image
 function captureImage() {
   const input = document.createElement("input");
   input.type = "file";
   input.accept = "image/*";
+  input.capture = "environment"; // mobile will open camera
   input.onchange = () => {
     const file = input.files[0];
     if (file) {
+      showPreview(file);
       uploadFileToBackend(file);
       imgCount++;
       document.getElementById("img-count").innerText = imgCount + " Images";
-      alert("📷 Image selected and uploaded");
     }
   };
   input.click();
 }
 
-// Capture video from camera/gallery
+// Capture video
 function captureVideo() {
   const input = document.createElement("input");
   input.type = "file";
   input.accept = "video/*";
+  input.capture = "environment"; // mobile will open video recorder
   input.onchange = () => {
     const file = input.files[0];
     if (file) {
+      showPreview(file);
       uploadFileToBackend(file);
       vidCount++;
       document.getElementById("vid-count").innerText = vidCount + " Videos";
-      alert("🎥 Video selected and uploaded");
     }
   };
   input.click();
 }
 
-// Upload from gallery (image or video)
+// Upload from gallery
 function uploadFromGallery() {
   const input = document.createElement("input");
   input.type = "file";
   input.accept = "image/*,video/*";
   input.onchange = () => {
     const file = input.files[0];
-    if (file) uploadFileToBackend(file);
+    if (file) {
+      showPreview(file);
+      uploadFileToBackend(file);
+
+      if (file.type.startsWith("image/")) {
+        imgCount++;
+        document.getElementById("img-count").innerText = imgCount + " Images";
+      } else if (file.type.startsWith("video/")) {
+        vidCount++;
+        document.getElementById("vid-count").innerText = vidCount + " Videos";
+      }
+    }
   };
   input.click();
 }
+
 
 
 // ----------------- Show Preview -----------------
